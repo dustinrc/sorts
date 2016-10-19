@@ -35,7 +35,7 @@ func TestBubble2(t *testing.T) {
 		for i := range toSort {
 			if toSort[i] != tt.expected[i] {
 				// not fatal because we want to catch all failed cases in the test table
-				t.Errorf("Bubble(%v): expected %v, actual %v", tt.given, tt.expected, toSort)
+				t.Errorf("Bubble2(%v): expected %v, actual %v", tt.given, tt.expected, toSort)
 				break
 			}
 		}
