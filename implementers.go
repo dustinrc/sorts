@@ -5,9 +5,10 @@ import "fmt"
 // IntSlice implements the sorting methods for []int
 type IntSlice []int
 
-func (n IntSlice) Len() int           { return len(n) }
-func (n IntSlice) Less(i, j int) bool { return n[i] < n[j] }
-func (n IntSlice) Swap(i, j int)      { n[i], n[j] = n[j], n[i] }
+func (n IntSlice) Len() int                { return len(n) }
+func (n IntSlice) Less(i, j int) bool      { return n[i] < n[j] }
+func (n IntSlice) LessEqual(i, j int) bool { return n[i] <= n[j] }
+func (n IntSlice) Swap(i, j int)           { n[i], n[j] = n[j], n[i] }
 
 // IntSliceCounts implements the sorting methods for []int, also providing counts for comparisons and sorts
 type IntSliceCounts struct {
@@ -22,6 +23,11 @@ func (nc *IntSliceCounts) Len() int {
 func (nc *IntSliceCounts) Less(i, j int) bool {
 	nc.comparisons++
 	return nc.Slice[i] < nc.Slice[j]
+}
+
+func (nc *IntSliceCounts) LessEqual(i, j int) bool {
+	nc.comparisons++
+	return nc.Slice[i] <= nc.Slice[j]
 }
 
 func (nc *IntSliceCounts) Swap(i, j int) {
