@@ -18,3 +18,9 @@ var (
 		{fewUniqueInts, fewUniqueSortedInts},
 	}
 )
+
+func copyIntSlice(original []int) []int {
+	copied := make([]int, len(original))
+	copy(copied, original)
+	return copied
+}
