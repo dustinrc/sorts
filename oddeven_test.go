@@ -9,7 +9,7 @@ import (
 func TestOddEven(t *testing.T) {
 	for _, tt := range integerCases {
 		toSort := copyIntSlice(tt.given)
-		isc := &sorts.IntSliceCounts{Slice: toSort}
+		isc := &sorts.IntSliceCounts{IntSlice: toSort}
 		sorts.OddEven(isc)
 		for i := range toSort {
 			if toSort[i] != tt.expected[i] {

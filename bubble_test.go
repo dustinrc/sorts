@@ -9,7 +9,7 @@ import (
 func TestBubble(t *testing.T) {
 	for _, tt := range integerCases {
 		toSort := copyIntSlice(tt.given)
-		isc := &sorts.IntSliceCounts{Slice: toSort}
+		isc := &sorts.IntSliceCounts{IntSlice: toSort}
 		sorts.Bubble(isc)
 		for i := range toSort {
 			if toSort[i] != tt.expected[i] {
@@ -25,7 +25,7 @@ func TestBubble(t *testing.T) {
 func TestBubble2(t *testing.T) {
 	for _, tt := range integerCases {
 		toSort := copyIntSlice(tt.given)
-		isc := &sorts.IntSliceCounts{Slice: toSort}
+		isc := &sorts.IntSliceCounts{IntSlice: toSort}
 		sorts.Bubble2(isc)
 		for i := range toSort {
 			if toSort[i] != tt.expected[i] {

@@ -9,7 +9,7 @@ import (
 func TestInsertion(t *testing.T) {
 	for _, tt := range integerCases {
 		toSort := copyIntSlice(tt.given)
-		isc := &sorts.IntSliceCounts{Slice: toSort}
+		isc := &sorts.IntSliceCounts{IntSlice: toSort}
 		sorts.Insertion(isc)
 		for i := range toSort {
 			if toSort[i] != tt.expected[i] {
